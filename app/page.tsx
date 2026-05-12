@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-black">
       <h1 className="text-white text-5xl font-bold">
-        Hello World
+        THANOS
       </h1>
     </div>
   );
