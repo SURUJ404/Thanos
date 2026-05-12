@@ -67,57 +67,12 @@
 
 
 
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black font-sans">
-      <main className="flex flex-col items-center justify-center text-center">
-
-        {/* Animated THA﻿NOS Text */}
-        <h1 className="text-white text-6xl md:text-8xl font-bold tracking-widest animate-pulse drop-shadow-[0_0_20px_rgba(168,85,247,0.8)]">
-          THANOS
-        </h1>
-
-        {/* Sub text animation */}
-        <p className="mt-6 text-zinc-400 text-lg md:text-xl animate-fadeIn">
-          The Mad Titan Awaits
-        </p>
-
-      </main>
-
-      {/* Simple animation styles */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 1.5s ease-out forwards;
-        }
-
-        .animate-pulse {
-          animation: pulse 2.5s infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          50% {
-            transform: scale(1.05);
-            opacity: 0.8;
-          }
-        }
-      `}</style>
+    <div className="flex min-h-screen items-center justify-center bg-black">
+      <h1 className="text-white text-5xl font-bold">
+        Hello World
+      </h1>
     </div>
   );
 }
