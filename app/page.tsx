@@ -67,12 +67,35 @@
 
 
 
+// export default function Home() {
+//   return (
+//     <div className="flex min-h-screen items-center justify-center bg-black">
+//       <h1 className="text-white text-5xl font-bold">
+//         THANOS
+//       </h1>
+//     </div>
+//   );
+// }
+
+
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-black gap-6">
+      
+      <Image
+        src="/thanos.jpg"
+        alt="Thanos"
+        width={300}
+        height={300}
+        className="rounded-xl shadow-lg"
+      />
+
       <h1 className="text-white text-5xl font-bold">
         THANOS
       </h1>
+
     </div>
   );
 }
