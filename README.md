@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# THANOS ⚡
 
-## Getting Started
+![Thanos](https://raw.githubusercontent.com/SURUJ404/Thanos/main/thanos.jpg)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧠 Multi-Agent AI System
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**THANOS** is a multi-agent AI wrapper system designed to unify multiple Large Language Models (LLMs) into a single intelligent orchestration layer.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Instead of relying on one model, THANOS acts as a **central AI router** that dynamically connects and coordinates multiple AI agents.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧩 System Architecture
 
-To learn more about Next.js, take a look at the following resources:
+THANOS works as an **AI orchestration layer**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔹 Core Idea
+- User sends a query
+- System analyzes intent
+- Routes request to best AI agent
+- Aggregates response intelligently
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🤖 AI Agents Integrated
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🧠 OpenAI GPT Models — reasoning & general intelligence
+- 🔮 Claude — long context & structured thinking
+- 🔍 DeepSeek — code + analytical tasks
+- ⚙️ Other LLM APIs (extensible plugin system)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚡ Key Features
+
+- Multi-agent routing engine
+- AI response aggregation layer
+- Modular LLM integration
+- Unified chat interface
+- Scalable architecture for adding new models
+- Fast API-based communication layer
+
+---
+
+## 🏗️ System Design Philosophy
+
+THANOS is built on the principle:
+
+> “No single AI is best at everything — orchestration is the future.”
+
+Instead of competing models, THANOS **combines intelligence**.
+
+---
+
+## 🔄 Flow Diagram
