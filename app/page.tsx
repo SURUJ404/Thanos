@@ -87,8 +87,8 @@ export default function Home() {
       <Image
         src="/thanos.jpg"
         alt="Thanos"
-        width={300}
-        height={300}
+        width={1000}
+        height={800}
         className="rounded-xl shadow-lg"
       />
 
