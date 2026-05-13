@@ -1,26 +1,363 @@
+/**
+ * app/globals.css
+ * THAΝΟΣ • Grok/xAI Inspired Global Theme
+ */
+
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* @plugin "@tailwindcss/typography"; */
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 1rem;
+
+  --background: #0b0f19;
+  --foreground: #e5e7eb;
+
+  --card: #111827;
+  --card-foreground: #f9fafb;
+
+  --popover: #111827;
+  --popover-foreground: #f9fafb;
+
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1f2937;
+  --secondary-foreground: #d1d5db;
+
+  --muted: #172033;
+  --muted-foreground: #94a3b8;
+
+  --accent: #00bfff;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+
+  --ring: rgba(59, 130, 246, 0.4);
+
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f8fafc;
+
+  --chart-1: #3b82f6;
+  --chart-2: #06b6d4;
+  --chart-3: #8b5cf6;
+  --chart-4: #22c55e;
+  --chart-5: #f97316;
 }
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+
+  --card: rgba(15, 23, 42, 0.75);
+  --card-foreground: #f8fafc;
+
+  --popover: rgba(15, 23, 42, 0.95);
+  --popover-foreground: #f8fafc;
+
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+
+  --secondary: rgba(255, 255, 255, 0.05);
+  --secondary-foreground: #f8fafc;
+
+  --muted: rgba(255, 255, 255, 0.04);
+  --muted-foreground: #94a3b8;
+
+  --accent: rgba(59, 130, 246, 0.15);
+  --accent-foreground: #60a5fa;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+
+  --ring: rgba(59, 130, 246, 0.5);
+
+  --sidebar: #020617;
+  --sidebar-foreground: #f8fafc;
+}
+
+/* =========================================================
+   TAILWIND V4 THEME BINDINGS
+========================================================= */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* =========================================================
+   BASE
+========================================================= */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    background:
+      radial-gradient(circle at top left,
+        rgba(59, 130, 246, 0.1),
+        transparent 30%),
+      radial-gradient(circle at bottom right,
+        rgba(139, 92, 246, 0.08),
+        transparent 30%),
+      linear-gradient(to bottom, #020617, #000000);
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+
+.glass {
+  background: rgba(15, 23, 42, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* =========================================================
+   HOVER GLOW
+========================================================= */
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.25),
+    0 0 25px rgba(59, 130, 246, 0.18);
+}
+
+/* =========================================================
+   TRANSITIONS
+========================================================= */
+
+* {
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+/* =========================================================
+   FADE IN
+========================================================= */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 180ms ease-out;
+}
+
+/* =========================================================
+   BUTTON EFFECTS
+========================================================= */
+
+button,
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.03);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.35),
+    0 0 18px rgba(59, 130, 246, 0.12);
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.35) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.35);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.55);
+}
+
+/* =========================================================
+   SANDPACK FULL STRETCH
+========================================================= */
+
+.sandpack-stretch,
+.sandpack-stretch .sp-wrapper,
+.sandpack-stretch .sp-layout,
+.sandpack-stretch .sp-preview,
+.sandpack-stretch .sp-preview-container,
+.sandpack-stretch .sp-preview-iframe,
+.sandpack-stretch .sp-stack {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.sandpack-stretch .sp-layout {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* =========================================================
+   PANEL RESIZE HANDLE
+========================================================= */
+
+.panel-resize-handle {
+  width: 14px;
+  cursor: col-resize;
+  position: relative;
+  background: transparent;
+  touch-action: none;
+}
+
+.panel-resize-handle::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  width: 2px;
+  height: 100%;
+
+  background: rgba(59, 130, 246, 0.18);
+
+  transition:
+    background 150ms ease,
+    width 150ms ease;
+}
+
+.panel-resize-handle:hover::after,
+.panel-resize-handle--active::after {
+  width: 4px;
+  background: rgba(59, 130, 246, 0.6);
 }
