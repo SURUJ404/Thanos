@@ -77,3 +77,4 @@ firebase-adminsdk*.json
 # =========================
 .cache/
 tmp/
+**/temp/
