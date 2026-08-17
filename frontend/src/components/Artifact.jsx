@@ -10,7 +10,7 @@ function Artifact() {
   const [activeFile, setActiveFile] = useState(0)
   const [copied, setCopied] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  if (artifacts.length == 0) return;
+  if (artifacts.length == 0) return null;
 
 
 
