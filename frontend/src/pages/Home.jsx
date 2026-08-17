@@ -23,6 +23,10 @@ function Home() {
 
 
     const googleLogin = async () => {
+        if (!auth) {
+            alert("Firebase is not configured yet. Add VITE_FIREBASE_API_KEY and redeploy.")
+            return
+        }
         const data = await signInWithPopup(auth, googleProvider)
         const token = await data.user.getIdToken()
         console.log(token)

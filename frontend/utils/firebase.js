@@ -14,7 +14,10 @@ const firebaseConfig = {
   appId: "1:428104212065:web:7948e58a8bb47cda0d1420"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
-export const auth=getAuth(app)
-export const googleProvider=new GoogleAuthProvider()
+// Initialize Firebase only when a real API key is configured, otherwise
+// getAuth() throws and crashes the app on load.
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY;
+const isConfigured = Boolean(apiKey) && apiKey !== "add your firebase api key";
+const app = isConfigured ? initializeApp(firebaseConfig) : null
+export const auth = app ? getAuth(app) : null
+export const googleProvider = new GoogleAuthProvider()
